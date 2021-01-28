@@ -1,0 +1,80 @@
+# This plugin was inspired from Docker's auto container naming which combines a random adjective next to the last name
+# of a famous person. (furious_heisenberg, agitated_darwin, romantic_curie, boring_wozniak)
+# In this plugin I just use SFW dictionary adjectives and nouns, there is the possibility an NSFW combination can occur
+# but I've tried my best to minimize that chance as much as possible.
+
+# Do not change this, it could break things and settings if you do
+# You have been warned!
+version: 1
+
+# This applies to the command /rnick (Normal Anonymity)
+# This produces a nickname like the following "DailyRow916"
+# It combines an Adj + Noun + ID
+generate:
+  # Apply a random adjective
+  randomAdjective: true
+
+  # Apply a random noun
+  randomNoun: true
+
+  # Generate a random ID
+  randomID: true
+
+  # Length of RandomID to use if enabled above
+  randomIDLength: 3
+
+  # The percentage chance it will apply color and/or formatting (0-100)
+  # Set to 0 to disable entirely
+  # This operates on each of the 3 segments
+  # This means it takes a 25% chance on the Adjective, 25% chance on the Noun, and 25% chance on the ID all separately.
+  colorChancePercent: 25
+  formattingChancePercent: 25
+
+# This applies to the command /anick (Paranoid anonymity)
+# This produces a nickname like the following "a33846125627693", it then obfuscates it
+# All secure nickanme generations have the same length and obfuscation so they all look very similar
+# A Hacked client can disable obfuscation but you'd still be working with a 14-digit number.
+secureGenerate:
+  # Prefix before the number
+  prefix: "a"
+
+  # Length of number, in secure generation all nick names will be exactly this length for security
+  randomIDLength: 14
+
+# Special Anonymity settings
+anonymity:
+  # Everytime the returning player logs in, their nickname will be re-generated again
+  # This applies to existing players, not new players. Use the option below for new players.
+  regenerateEveryReturningLogin: true
+
+  # The first time the player logs in, their nickname will be randomized and will not be randomized anymore unless
+  # the option above is checked. This only applies to new players, for returning players use the option above.
+  regenerateFirstTimeLogin: true
+
+  # This allows the player to turn off automatic name randomization for them
+  allowUsersToDisable: true
+
+# Allow formatting codes to pick from, some draw too much attention/stand-out too much (Bold) and some make it
+# difficult to see what the nickname is (Magic/Obfuscation). These are determined to look the best, you can change them
+# as you see fit. The ordering of the list does not matter, they are all given equal chance.
+randomFormattingCodes:
+  - "&n" # Underline
+  - "&o" # Italic
+  - "&m" # Strikethrough
+
+# Allowed color codes to pick from, not all are very legible (for example the color black), these are the ones
+# determined to look the best, you can change them. The ordering of the list does not matter, they are all given equal
+# chance.
+randomColorCodes:
+  - "&2" # Dark Green
+  - "&3" # Dark Cyan
+  - "&4" # Dark Red
+  - "&5" # Dark Magenta
+  - "&6" # Dark Yellow
+  - "&7" # Light Gray
+  - "&a" # Green
+  - "&b" # Cyan
+  - "&c" # Red
+  - "&d" # Magenta
+  - "&e" # Yellow
+  - "&f" # White

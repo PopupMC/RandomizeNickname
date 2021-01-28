@@ -1,0 +1,13 @@
+name: RandomizeNickname
+version: 1.0
+main: com.popupmc.randomizenickname.RandomizeNickname
+description: Randomize Nickname
+author: junebug12851
+api-version: 1.15
+commands:
+  rnick:
+    description: Randomizes your nickname
+    usage: /rnick
+  anick:
+    description: Randomizes and obfuscates your nickname
+    usage: /anick
